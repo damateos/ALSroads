@@ -98,7 +98,7 @@ rasterize_conductivity.LAS <- function(las, dtm = NULL, param = alsroads_default
   if (display) raster::plot(sigma_r, col = viridis::viridis(25), main = "Conductivity roughness")
   verbose("   - Roughness conductivity map\n")
 
-  # Edge-based conductivity
+  # Edge-based conductivit
   e    <- param$conductivity$e
   slop <- raster::as.matrix(slope)
   sobl <- sobel(slop)
