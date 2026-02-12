@@ -210,8 +210,9 @@ rasterize_conductivity.LAS <- function(las, dtm = NULL, param = alsroads_default
   alpha = param$conductivity$alpha
   alpha$i = alpha$i * as.numeric(use_intensity)
   max_coductivity <- sum(unlist(alpha))
-  sigma <- sigma_s * sigma_lp * sigma_e * (alpha$d * sigma_d + alpha$h * sigma_h + alpha$r * sigma_r + alpha$i * sigma_i)
-  sigma <- sigma/max_coductivity
+  sigma <- sigma_s * sigma_lp * sigma_e
+  # * (alpha$d * sigma_d + alpha$h * sigma_h + alpha$r * sigma_r + alpha$i * sigma_i)
+  # sigma <- sigma/max_coductivity
 
   smin = param$conductivity$sigma_min
   sigma[sigma < smin] = smin
